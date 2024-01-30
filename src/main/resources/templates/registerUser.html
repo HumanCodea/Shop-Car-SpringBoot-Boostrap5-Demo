@@ -19,15 +19,7 @@
         padding: 0;
         font-family: 'Poppins', sans-serif;
     }
-
-        body{
-            background-image: url(./picture/home.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
+    
         .dropdown{
             position: relative;
         }
@@ -68,19 +60,41 @@
                       <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.youtube.com/channel/UCF66fHT4NZSsLRc3YHfsKFg}">Conect to Youtube <i style="color: red;" class='bx bxl-youtube bx-flip-vertical' ></i></a></li>
                       <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.facebook.com/nguyenquy.than.3/}">Conect to Facebook <i style="color: blue;" class='bx bxl-facebook-circle'></i></a></li>
                       <!-- <li><hr class="dropdown-divider"></li> -->
-                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.instagram.com/_thando_02/}">Conect to Instagram <i style="color: bisque" class='bx bxl-instagram-alt' ></i></a></li>
+                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.instagram.com/_thando_02/}">Conect to Instagram <i style="color: bisque;" class='bx bxl-instagram-alt' ></i></a></li>
                     </ul>
                   </li>  
                 </ul>
-                <form th:action="available_car" class="d-flex">
-                  <input name="nameCar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" th:value="${nameCar}">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
               </div>
             </div>
           </nav>
     </div>
 
+    <div class="container my-5 p-5" style="border:1px solid black;">
+      <h4 class="text-center">Register User</h4>
+      <form class="col-md-4 offset-md-4" th:action="@{/saveUser}" method="post">
+          <div class="mb-3">
+              <label for="username" class="form-label">UserName</label>
+              <input type="text" class="form-control" name="username">
+          </div>
+          <div class="mb-3">
+              <label for="passwords" class="form-label">PassWord</label>
+              <input type="password" class="form-control" name="passwords">
+            </div>
+            <div class="mb-3">
+              <label for="roles" class="form-label">Roles</label>
+              <input type="text" class="form-control" name="roles">
+            </div>
+          <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        </form>
+        <a th:href="@{/login}">Sign in</a>
+    </div>
+
+
+
+    
+
+
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
