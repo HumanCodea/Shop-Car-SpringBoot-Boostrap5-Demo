@@ -27,9 +27,10 @@ public class CustomerController {
         return "loginUser";
     }
 
+
     @PostMapping("/saveUser")
-    public String SaveUser(@ModelAttribute Customer customer){
+    public String SaveUser(@ModelAttribute() Customer customer){
         customerService.SaveUser(customer);
-        return "redirect:/login";
+    return "redirect:/register?successfully";
     }
 }

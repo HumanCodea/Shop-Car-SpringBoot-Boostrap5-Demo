@@ -28,8 +28,8 @@ public class CarController {
     private MyCarService myCarService;
     
     @GetMapping("/home")
-    public String Home(){
-        return "home";
+    public String HomeUser(){
+        return "homeUser";
     }
 
     @GetMapping("/available_car")
@@ -73,6 +73,11 @@ public class CarController {
         MyCar myCar = new MyCar(carOld.getId(), carOld.getNameCar(), carOld.getManufacturer(), carOld.getColorCar(), carOld.getCounts(), carOld.getYears(), carOld.getPrices());
         myCarService.saveMyCar(myCar);
         return "redirect:/my_car";
+    }
+
+    @GetMapping("/homeAdmin")
+    public String HomeAdmin(){
+        return "homeAdmin";
     }
 
 }

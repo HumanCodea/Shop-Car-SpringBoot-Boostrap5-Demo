@@ -58,8 +58,13 @@
           </nav>
     </div>
 
+    
+
     <div class="container my-5 p-5" style="border:1px solid black;">
       <h4 class="text-center">Register User</h4>
+      <div th:if="${param.successfully}">
+        <div class="alert alert-info"> You've registed successfully!</div>
+      </div>
       <form class="col-md-4 offset-md-4" th:action="@{/saveUser}" method="post">
           <div class="mb-3">
               <label for="username" class="form-label">UserName</label>
