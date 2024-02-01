@@ -52,17 +52,6 @@
                   <li class="nav-item">
                     <a class="nav-link text-white" th:href="@{/my_car}">My Car</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" th:href="@{#}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      About Me
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.youtube.com/channel/UCF66fHT4NZSsLRc3YHfsKFg}">Conect to Youtube <i style="color: red;" class='bx bxl-youtube bx-flip-vertical' ></i></a></li>
-                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.facebook.com/nguyenquy.than.3/}">Conect to Facebook <i style="color: blue;" class='bx bxl-facebook-circle'></i></a></li>
-                      <!-- <li><hr class="dropdown-divider"></li> -->
-                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{https://www.instagram.com/_thando_02/}">Conect to Instagram <i style="color: bisque;" class='bx bxl-instagram-alt' ></i></a></li>
-                    </ul>
-                  </li>  
                 </ul>
               </div>
             </div>
@@ -72,6 +61,15 @@
     <div class="container my-5 p-5" style="border:1px solid black;">
       <h4 class="text-center">Login User</h4>
       <form class="col-md-4 offset-md-4" method="post">
+
+          <div th:if="${param.error}">
+            <div class="alert alert-danger">Invalid username or password!</div>
+          </div>
+
+          <div th:if="${param.logout}">
+            <div class="alert alert-info">You have been logged out.</div>
+          </div>
+
           <div class="mb-3">
               <label for="username" class="form-label">UserName</label>
               <input type="text" class="form-control" name="username">

@@ -71,6 +71,9 @@
                 <div>
                     <a class="nav-link text-white" th:href="@{/car_register}">New Car Register</a> <!-- href la dung de xu li khi bam vao-->
                 </div>
+                <div>
+                  <a ces:authorize="isAuthenticated()" class="nav-link text-white" th:href="@{/logout}">Sign out</a> <!-- href la dung de xu li khi bam vao-->
+              </div>
               </div>
             </div>
           </nav>
